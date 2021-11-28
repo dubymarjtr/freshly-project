@@ -10,10 +10,16 @@ router.get("/", (_, res) => {
     res.send("Hello from API router");
 });
 
-  // localhost:3000/meals
+  // get all meals
 router.get("/meals", async (_, res) => {
     const meals = await collection.find({}).toArray();
     res.json(meals);
 });
 
+// get meal by id (dynamic route)
+router.get("/meals/:id", async (req, res) => {
+    const meal = await collection.findOne({ _id: Number(req.params.id) });
+    console.log(meal);
+    res.json(meal);
+});
 export default router;
