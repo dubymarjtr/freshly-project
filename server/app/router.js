@@ -28,6 +28,14 @@ router.post("/meals", async (req,res) => {
   const newMeal = await collection.insertOne(req.body);
   res.json(newMeal);
 })
+
+// update a meal
+router.put("/meals/", async (req, res) => {
+  const updatedMeal = await collection.updateOne({ _id: Number(req.body.id)},
+  { $set: req.body.payload });
+  res.json(updatedMeal);
+})
+
 // delete a meal
 router.delete("/meals/:id", async (req, res) => {
   const deletedMeal = await collection.deleteOne({ _id: Number(req.params.id) });
