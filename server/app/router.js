@@ -23,6 +23,11 @@ router.get("/meals/:id", async (req, res) => {
     res.json(meal);
 });
 
+// create a new meal
+router.post("/meals", async (req,res) => {
+  const newMeal = await collection.insertOne(req.body);
+  res.json(newMeal);
+})
 // delete a meal
 router.delete("/meals/:id", async (req, res) => {
   const deletedMeal = await collection.deleteOne({ _id: Number(req.params.id) });
