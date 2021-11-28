@@ -8,9 +8,9 @@ app.get("/", (_, res) => {
   res.send("Hello World");
 });
 
-app.use("/api", router);
-
 app.use(express.json());
+
+app.use("/api", router);
 
 app.listen(config.port, () => {
   console.log(`Server 🏃🏾‍♂️ at: http://localhost:${config.port}`);
