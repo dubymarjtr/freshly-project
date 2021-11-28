@@ -22,4 +22,11 @@ router.get("/meals/:id", async (req, res) => {
     console.log(meal);
     res.json(meal);
 });
+
+// delete a meal
+router.delete("/meals/:id", async (req, res) => {
+  const deletedMeal = await collection.deleteOne({ _id: Number(req.params.id) });
+  res.json(deletedMeal);
+});
+
 export default router;
