@@ -42,7 +42,6 @@ router.get("/meals", async (req, res) => {
 // get meal by id (dynamic route)
 router.get("/meals/:id", async (req, res) => {
     const meal = await collection.findOne({ _id: Number(req.params.id) });
-    console.log(meal);
     res.json(meal);
 });
 
