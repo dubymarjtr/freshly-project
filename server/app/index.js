@@ -10,6 +10,8 @@ app.get("/", (_, res) => {
 
 app.use("/api", router);
 
+app.use(express.json());
+
 app.listen(config.port, () => {
   console.log(`Server 🏃🏾‍♂️ at: http://localhost:${config.port}`);
 });
