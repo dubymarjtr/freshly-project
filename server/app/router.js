@@ -7,14 +7,37 @@ const router = new Router();
 
 // localhost:3000/api
 router.get("/", (_, res) => {
-    res.send("Hello from API router");
+  res.send("Hello from API router");
 });
 
-  // get all meals
-router.get("/meals", async (_, res) => {
-    const meals = await collection.find({}).toArray();
-    res.json(meals);
-});
+// get all meals with optional filters
+router.get("/meals", async (req, res) => {
+  const keys = Object.keys(req.query);
+  const values = Object.values(req.query);
+
+  const meals = await collection.find({}).toArray();
+
+  function filterMeals(meals, keys, values) {
+      let index;
+      if(keys.includes('keywords'))
+      {
+          index = keys.indexOf('keywords')
+          meals = meals.filter(meal => meal.title.includes(values[index]) ||
+          meal.description.includes(values[index]) || 
+          meal.ingredients.includes(values[index]))
+      }
+      if(keys.includes('diet-type'))
+      {
+          index = keys.indexOf('diet-type');
+          meals = meals.filter(meal => meal.diet.includes(values[index]));
+      }
+      return meals;
+  }
+
+  const filteredMeals = filterMeals(meals, keys, values);
+  res.json(filteredMeals);
+})
+
 
 // get meal by id (dynamic route)
 router.get("/meals/:id", async (req, res) => {
