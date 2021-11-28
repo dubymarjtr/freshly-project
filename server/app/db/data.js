@@ -1,7 +1,7 @@
 export default [
     {
         title: "Steak Peppercorn with Sauteed Carrots and French Green Beans",
-        id: 1,
+        _id: 1,
         ingredients: "Green beans, flat iron steak, red potatoes, carrots, cassava flour, plain yogurt",
         description: `Tender, high-protein flat iron steak, grilled to perfection.
         Bed of creamy mashed potatoes as a hearty accompaniment. 
@@ -13,7 +13,7 @@ export default [
     },
     {
         title: "Homestyle Chicken with Masterful Mac and Cheese",
-        id: 2,
+        _id: 2,
         ingredients: "Butternut squash, cassava flour, elbow macaroni, green beans, chicken breast, almonds",
         description: `Greaseless oven-fried chicken breast, hand-"breaded' with a gluten-free almond flour batter.
         Our Masterful Mac is made with gluten-free brown-rice macaroni and a cheesy sauce thickened with butternut squash.
@@ -24,7 +24,7 @@ export default [
     },
     {
         title: "Cauliflower Shell Beef Bolognese with Nonna's Soffritto and Italian Cheeses",
-        id: 3,
+        _id: 3,
         ingredients: "Celery, cauliflower, parmesan cheese, ground beef, carrots, marinara sauce",
         description: `Our gluten- and grain-free cauliflower pasta shells and high-protein ground beef.
         Our Masterful Marinara sauce is packed with five sneaky veggies and a hint of honey for sweetness.
@@ -36,7 +36,7 @@ export default [
     },
     {
         title: "Sausage Baked Penne with Sauteed Zucchini and Spinach",
-        id: 4,
+        _id: 4,
         ingredients: "Italian sausage, spinach, zucchini, penne, tomatoes, marinara sauce",
         description: `Pasta night gets an upgrade with gluten-free brown-rice pasta and our Masterful Marinara, packed with 5 sneaky veggies and a touch of honey.
         Nitrate- and nitrite-free pork sausage with Italian spices.
@@ -48,7 +48,7 @@ export default [
     },
     {
         title: "Savory-Sweet Chicken Teriyaki Bowl with Basmati Rice and Veggies",
-        id: 5,
+        _id: 5,
         ingredients: "Green chickpeas, teriyaki sauce, carrots, coconut nectar, basmati rice, chicken tight",
         description: `The salty-sweet flavors of chicken teriyaki just got a little better-for-you.
         Juicy, chopped chicken thigh in a tantalizing sauce that’s just as craveable as the original, but sweetened naturally with coconut sap.
@@ -59,7 +59,7 @@ export default [
     },
     {
         title: "Coconut Lemongrass Pork Bowl with Cauliflower Rice and Fire-roasted Veggies",
-        id: 6,
+        _id: 6,
         ingredients: "Cauliflower, coconut milk, diced pork, garlic, ginger, lemongrass.",
         description: `Power up and power through with a bowl of juicy, protein-packed pork.
         Get a fix of colorful fiber from fire-roasted cauliflower, bell peppers, red onions, and yellow squash.
@@ -70,7 +70,7 @@ export default [
     },
     {
         title: "Baja Pork Bowl with Chile Verde and Summer Veggie Medley",
-        id: 7,
+        _id: 7,
         ingredients: "Brown rice, cauliflower, diced pork, onion, tomatillo, wild rice",
         description: `We take juicy diced pork, cook it sous-vide until just right, and then sear it for even more flavor.
         Mixed with sunny squash and three types of fire-roasted veg: red onions, cauliflower, and red bell peppers.
@@ -81,7 +81,7 @@ export default [
     },
     {
         title: "Hearty Chipotle-Chicken Stew with Black Beans and Monterey Jack",
-        id: 8,
+        _id: 8,
         ingredients: "Onion, black beans, tomatoes, corn, red bell pepper, chicken breast",
         description: `Southwestern inspired and satisfyingly chunky—our nourishing go-to, no matter the hour.
         Studded with chopped chicken breast, long-grain rice, corn, and black beans.
@@ -93,7 +93,7 @@ export default [
     },
     {
         title: "Chicken Tikka Masala with Seven-Spice Vegetable Biryani",
-        id: 9,
+        _id: 9,
         ingredients: "Carrots, greek yogurt, peas, chickpeas, green beans, chicken tight",
         description: `Get your spoon ready for our creamy yet virtuous masala sauce, slow-stirred with tomato, Greek yogurt, and warming spices.
         Mixed with juicy chicken thighs and chickpeas for a hit of protein and fiber.
@@ -104,7 +104,7 @@ export default [
     },
     {
         title: "Middle Eastern Falafel Bowl with Garlicky Tahini Sauce and Whole Grains",
-        id: 10,
+        _id: 10,
         ingredients: "Brown rice, lentils, quinoa, red bell pepper, tahini",
         description: `Take your taste buds on a tour of the Middle East with this saucy, purely plant bowl.
         It starts with an aromatic, protein-packed blend of lentils, quinoa, wild rice, and brown rice.
@@ -116,7 +116,7 @@ export default [
     },
     {
         title: "Very Verde Chicken with Super Greens and Roaster Cauliflower",
-        id: 11,
+        _id: 11,
         ingredients: "Chicken breast, spinach, cauliflower, kale, swiss chard, parmesan cheese",
         description: `Eating your greens never tasted (or felt) so good—this savory dish skips excess carbs for extra protein.
         Lean, grilled chicken breast is slicked in our tasty pesto, supercharged with kale, basil, and cashew butter.
@@ -127,7 +127,7 @@ export default [
     },
     {
         title: "Chicken al Limone with Zoodles and Garlicky Broccoli",
-        id: 12,
+        _id: 12,
         ingredients: "Cashew butter, cassava flour, chicken breast, garlic, lemon, broccoli",
         description: `Satisfy your pasta cravings without the excess carbs or dairy.
         Our zoodles come slicked in a lemony piccata-style sauce made with garlic, cashew butter, and capers.
@@ -138,7 +138,7 @@ export default [
     },
     {
         title: "Baked Turkey Meatballs with Zoodles and Eight-Veggie Ragu",
-        id: 13,
+        _id: 13,
         ingredients: "Ground turkey, marinara sauce, mushrooms, parmesan cheese, zucchini",
         description: `Carb-conscious meets extra cozy in our harvest-happy reboot of spaghetti & meatballs, with spiralized zucchini in place of heavy noodles.
         Hearty veggie ragù with a who’s who of nutritious greens, reds, and oranges, such as zucchini, butternut squash, kale, and tomato.
@@ -149,7 +149,7 @@ export default [
     },
     {
         title: "Oven-baked Chicken Florentine with Creamed Spinach and Riced Broccoli Pilaf",
-        id: 14,
+        _id: 14,
         ingredients: "Broccoli, cauliflower, chicken breast, honey, mozzarella cheese, spinach",
         description: `High-protein chicken breast is coated in tasty spices, cassava flour, and parmesan, then oven-baked to golden perfection.
         Classic creamed spinach serves up lip-smacking flavor + vitamin A.
@@ -160,7 +160,7 @@ export default [
     },
     {
         title: "Super Kale Peste Chicken with Roasted Seasonal Veggies",
-        id: 15,
+        _id: 15,
         ingredients: "Broccoli, carrots, chicken breast, kale, olive oil, pecans",
         description: `High-protein chicken breast grilled with thyme.
         Plant-powered pesto, blended with a superfood mix of basil, kale, and cashew butter + pumpkin, flax, and hemp seeds.
@@ -172,7 +172,7 @@ export default [
     },
     {
         title: "Indian-Spiced Chickpea Curry Bowl with Basmati Rice, Lentils, and Veggies",
-        id: 16,
+        _id: 16,
         ingredients: "Cauliflower, curry powder, green chickpeas, lentils, peas, tomatoes",
         description: `A totally plant-powered, Indian-inspired curry with coconutty creaminess and a rich golden glow.
         Mildly spiced with turmeric, ginger, coriander, garam masala, cilantro, and lime.
@@ -184,7 +184,7 @@ export default [
     },
     {
         title: "Glazed Parisian Carrots with Apple, Honey and Cinnamon",
-        id: 17,
+        _id: 17,
         ingredients: "Sherry vinegar, vegetable stock, apple, carrots, honey, orange juice",
         description: `Our multi-serve side of oven-roasted Parisian carrots bring fall flavors to any feast, with a honeyed glaze of cinnamon, allspice, sherry vinegar, and diced apples. All that’s left is to heat & savor!
         Quick & delicious hacks for mealtime magic:
@@ -197,7 +197,7 @@ export default [
     },
     {
         title: "Unwrapped Salsa Verde Burrito with Purely Plant Crumbles",
-        id: 18,
+        _id: 18,
         ingredients: "Black beans, cilantro, pinto beans, plant-based crumbles, sweet potatoes, tomatillo",
         description: `The best of a burrito, minus the the tortilla.
         Our signature, purely plant protein crumbles are simply made of yellow peas, mushrooms, pinto beans, and fragrant spices, for a whopping 10g of sunny plant protein.
@@ -208,7 +208,7 @@ export default [
     },
     {
         title: "Farmstead Baked Lentil Pasta with Seasonal Veggies and Creamy Marinara",
-        id: 19,
+        _id: 19,
         ingredients: "Broccoli, Butternut squash, green chickpeas, marinara sauce, mushrooms",
         description: `The full bounty of plant-based eating, in one plate of baked pasta.
         Starring hearty, gluten-free macaroni made of brown rice and lentils.
@@ -219,7 +219,7 @@ export default [
     },
     {
         title: `Buffalo Cauliflower Mac and "Cheeze" with Garlicky Broccoli`,
-        id: 20,
+        _id: 20,
         ingredients: "Broccoli, buffalo sauce, butternut squash, cashews, nutritional yeast",
         description: `A plant-powered mac so “cheezy,” you won’t even notice it’s dairy-free.
         Starring hearty, gluten-free macaroni made of brown rice and lentils.
