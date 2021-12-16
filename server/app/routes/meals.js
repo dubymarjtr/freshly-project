@@ -10,7 +10,7 @@ router.get("/", (_, res) => {
 
 // get all meals with optional filters
 router.post("/", async (req, res) => {
-  if (req.isAuth?.role === "ADMIN") {
+  if (req.isAuth?.role === "ADMIN" || req.isAuth?.role === "CUSTOMER") {
     try {
       const meals = await mealsController.index(req);
       res.json(meals);
@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
 
 // get meal by id (dynamic route)
 router.post("/:id", async ({ isAuth, params }, res) => {
-  if (isAuth?.role === "ADMIN") {
+  if (isAuth?.role === "ADMIN" || isAuth?.role === "CUSTOMER") {
     try {
       const meal = await mealsController.show(params.id);
       res.json(meal);
