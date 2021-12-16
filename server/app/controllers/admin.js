@@ -1,13 +1,13 @@
-import client from "../db/conns/client.js";
-import config from "../config.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import config from "../config.js";
+import client from "../db/conns/client.js";
 
 const admin = client.db(config.db.name).collection("admin");
 
 export default {
   // Create admin
-  async create(username, password) {
+  async create({ username, password, role }) {
     const existingAdmin = await admin.findOne({ username });
 
     // Check if user already exists
@@ -19,10 +19,10 @@ export default {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create admin and insert into database
-    return admin.insertOne({ username, password: hashedPassword });
+    return admin.insertOne({ username, password: hashedPassword, role });
   },
 
-  async show(username, password) {
+  async show({ username, password }) {
     const adminUser = await admin.findOne({ username });
 
     if (!adminUser) {
