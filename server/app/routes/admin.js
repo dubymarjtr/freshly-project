@@ -31,4 +31,14 @@ router.post("/register", async (req, res) => {
   }
 });
 
+// Login admin
+router.post("/login", async ({ body }, res) => {
+  try {
+    await adminController.show(body);
+    res.send(`Welcome, ${body.username}!`);
+  } catch ({ message }) {
+    res.status(400).json(message);
+  }
+});
+
 export default router;
