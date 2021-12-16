@@ -10,8 +10,12 @@ router.get("/", (_, res) => {
 // get all meals with optional filters
 router.post("/", async (req, res) => {
   if (req.isAuth) {
-    const meals = await mealsController.index(req);
-    res.json(meals);
+    try {
+      const meals = await mealsController.index(req);
+      res.json(meals);
+    } catch ({ message }) {
+      res.status(500).json({ message });
+    }
   } else {
     res.status(401).json({ message: "Access Denied" });
   }
