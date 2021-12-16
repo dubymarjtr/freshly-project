@@ -41,4 +41,9 @@ export default {
   delete(id) {
     return meals.deleteOne({ _id: Number(id) });
   },
+
+  // Create a new meal
+  create(meal) {
+    return meals.insertOne(meal);
+  },
 };

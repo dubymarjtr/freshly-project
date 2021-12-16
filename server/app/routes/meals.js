@@ -1,5 +1,6 @@
 import { Router } from "express";
 import mealsController from "../controllers/meals.js";
+import Meal from "../models/users/Meal.js";
 
 const router = new Router();
 
@@ -41,6 +42,29 @@ router.delete("/:id", async ({ isAuth, params }, res) => {
     try {
       const deletedMeal = await mealsController.delete(params.id);
       res.json(deletedMeal);
+    } catch ({ message }) {
+      res.status(500).json({ message });
+    }
+  } else {
+    res.status(401).json({ message: "Access Denied" });
+  }
+});
+
+// create a new meal
+router.post("/create", async ({ isAuth, body }, res) => {
+  if (isAuth?.role === "ADMIN") {
+    try {
+      // create meal instance
+      const meal = new Meal(body);
+
+      // validate meal
+      const errors = meal.validate();
+
+      if (errors.length) {
+        throw new Error(errors.join("\n"));
+      }
+      const newMeal = await mealsController.create(body);
+      res.status(201).json(newMeal);
     } catch ({ message }) {
       res.status(500).json({ message });
     }
