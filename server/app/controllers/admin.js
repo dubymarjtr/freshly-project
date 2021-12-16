@@ -38,7 +38,7 @@ export default {
 
     // Create JWT
     return jwt.sign(
-      { username, role: username.role },
+      { username, role: adminUser.role },
       config.encryption.secret,
       {
         expiresIn: config.encryption.expiresIn,
