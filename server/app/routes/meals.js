@@ -51,7 +51,7 @@ router.delete("/:id", async ({ isAuth, params }, res) => {
 });
 
 // create a new meal
-router.post("/create", async ({ isAuth, body }, res) => {
+router.put("/create", async ({ isAuth, body }, res) => {
   if (isAuth?.role === "ADMIN") {
     try {
       // create meal instance
