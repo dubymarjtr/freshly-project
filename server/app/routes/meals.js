@@ -73,4 +73,18 @@ router.post("/create", async ({ isAuth, body }, res) => {
   }
 });
 
+// update a meal
+router.put("/:id", async ({ isAuth, params, body }, res) => {
+  if (isAuth?.role === "ADMIN") {
+    try {
+      const updatedMeal = await mealsController.update(params.id, body);
+      res.json(updatedMeal);
+    } catch ({ message }) {
+      res.status(500).json({ message });
+    }
+  } else {
+    res.status(401).json({ message: "Access Denied" });
+  }
+});
+
 export default router;

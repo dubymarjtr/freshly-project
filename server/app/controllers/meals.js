@@ -46,4 +46,9 @@ export default {
   create(meal) {
     return meals.insertOne(meal);
   },
+
+  // Update a meal
+  update(id, payload) {
+    return meals.updateOne({ _id: Number(id) }, { $set: payload });
+  },
 };
