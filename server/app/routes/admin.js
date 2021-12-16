@@ -13,6 +13,13 @@ router.post("/register", async (req, res) => {
   try {
     // create admin instance
     const admin = new Admin(req.body);
+
+    const errors = admin.validate();
+
+    if (errors.length) {
+      throw new Error(errors.join("\n"));
+    }
+
     // create admin using controller
     await adminController.create(admin);
 
