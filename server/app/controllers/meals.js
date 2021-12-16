@@ -31,8 +31,14 @@ export default {
 
     return filterMeals(mealsData, keys, values);
   },
+
   // Get meal by id (dynamic route)
   show(id) {
     return meals.findOne({ _id: Number(id) });
+  },
+
+  // Delete a meal
+  delete(id) {
+    return meals.deleteOne({ _id: Number(id) });
   },
 };
