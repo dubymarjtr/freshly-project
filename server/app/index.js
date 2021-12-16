@@ -1,7 +1,6 @@
 import express from "express";
 import config from "./config.js";
-import router from "./router.js"
-
+import router from "./routes/index.js";
 const app = express();
 
 app.get("/", (_, res) => {
