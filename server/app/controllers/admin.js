@@ -37,8 +37,12 @@ export default {
     }
 
     // Create JWT
-    return jwt.sign({ username }, config.encryption.secret, {
-      expiresIn: config.encryption.expiresIn,
-    });
+    return jwt.sign(
+      { username, role: username.role },
+      config.encryption.secret,
+      {
+        expiresIn: config.encryption.expiresIn,
+      }
+    );
   },
 };
