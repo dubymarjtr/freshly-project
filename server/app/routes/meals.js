@@ -8,9 +8,9 @@ router.get("/", (_, res) => {
   res.send("Take a look at our Freshly Cooked Meals!");
 });
 
-router.post("/", async ({ isAuth }, res) => {
-  if (isAuth) {
-    const meals = await mealsController.index();
+router.post("/", async (req, res) => {
+  if (req.isAuth) {
+    const meals = await mealsController.index(req);
     res.json(meals);
   } else {
     res.status(401).json({ message: "Access Denied" });
