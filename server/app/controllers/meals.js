@@ -4,7 +4,7 @@ import client from "../db/conns/client.js";
 const meals = client.db(config.db.name).collection("meals");
 
 export default {
-  // Get all meals
+  // Get all meals with optional filters
   async index(req) {
     const keys = Object.keys(req.query);
     const values = Object.values(req.query);
@@ -30,5 +30,9 @@ export default {
     }
 
     return filterMeals(mealsData, keys, values);
+  },
+  // Get meal by id (dynamic route)
+  show(id) {
+    return meals.findOne({ _id: Number(id) });
   },
 };
