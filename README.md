@@ -90,28 +90,35 @@ All routes will be protected via JWT after authenticating an Admin or Customer.
 
 ### Admin Routes
 
-`/admin`
+#### `/admin`
 
 `POST - /register`
+
 `POST - /login`
 
 
 ### Customer Routes
 
-`/customer`
+#### `/customer`
 
 `POST` - `/register`
+
 `POST` - `/login`
+
 `PUT` - `/order`
 
 ### Meal Routes
 
-`/meals`
+#### `/meals`
 
 `PUT` - Create a meal.
+
 `PUT` - `/:id` - Update a meal.
+
 `DELETE` - `/:id` - Delete a meal.
+
 `POST`- Get all meals (with optional filters).
+
 `POST`- `/:id` - Get a meal by its id
 
 ## External APIs
