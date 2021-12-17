@@ -56,9 +56,43 @@ export default {
 
   // Place an order
   async order(ids) {
-    const mealsData = await meals.find({}).toArray();
+    let pricePerMeal;
 
+    // number of meals should be 4, 6, 8, or 10
+    if (
+      ids.length !== 4 &&
+      ids.length !== 6 &&
+      ids.length !== 8 &&
+      ids.length !== 10
+    ) {
+      throw new Error("Please select 4, 6, 8, or 10 meals");
+    }
+
+    // assign price depending on number of meals
+    if (ids.length === 4) {
+      pricePerMeal = 10.99;
+    } else if (ids.length === 6) {
+      pricePerMeal = 8.99;
+    } else if (ids.length === 8) {
+      pricePerMeal = 6.99;
+    } else if (ids.length === 10) {
+      pricePerMeal = 4.99;
+    }
+
+    // retrieve meals from database
+    const mealsData = await meals.find({}).toArray();
     const selectedMeals = mealsData.filter((meal) => ids.includes(meal._id));
-    return selectedMeals;
+
+    // create array with meals titles only
+    const mealsTitles = selectedMeals.map((meal) => meal.title);
+
+    // create receipt object with meals titles and total price
+    const receipt = {
+      meals: mealsTitles,
+      unitPrice: `${ids.length} x $${pricePerMeal}`,
+      total: `$${ids.length * pricePerMeal}`,
+    };
+
+    return receipt;
   },
 };
