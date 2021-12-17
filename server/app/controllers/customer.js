@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import config from "../config.js";
 import client from "../db/conns/client.js";
 
-const customer = client.db(config.db.name).collection("customer");
+const customer = client.db(config.db.name).collection("customers");
 const meals = client.db(config.db.name).collection("meals");
 
 export default {
