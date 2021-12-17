@@ -95,4 +95,9 @@ export default {
 
     return receipt;
   },
+
+  // Add receipt to customer account
+  addReceipt(username, receipt) {
+    return customer.updateOne({ username }, { $push: { orders: receipt } });
+  },
 };

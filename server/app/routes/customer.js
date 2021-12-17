@@ -45,7 +45,9 @@ router.post("/login", async ({ body }, res) => {
 router.put("/order", async ({ isAuth, body }, res) => {
   if (isAuth?.role === "CUSTOMER") {
     try {
+      const { username } = isAuth;
       const order = await customerController.order(body.mealsId);
+      await customerController.addReceipt(username, order);
       res.status(200).json(order);
     } catch ({ message }) {
       res.status(500).json({ message });
