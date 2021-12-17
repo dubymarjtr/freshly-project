@@ -4,6 +4,7 @@ import config from "../config.js";
 import client from "../db/conns/client.js";
 
 const customer = client.db(config.db.name).collection("customer");
+const meals = client.db(config.db.name).collection("meals");
 
 export default {
   // Create customer account
@@ -51,5 +52,13 @@ export default {
         expiresIn: config.encryption.expiresIn,
       }
     );
+  },
+
+  // Place an order
+  async order(ids) {
+    const mealsData = await meals.find({}).toArray();
+
+    const selectedMeals = mealsData.filter((meal) => ids.includes(meal._id));
+    return selectedMeals;
   },
 };

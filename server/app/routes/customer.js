@@ -1,6 +1,6 @@
 import { Router } from "express";
-import Customer from "../models/users/Customer.js";
 import customerController from "../controllers/customer.js";
+import Customer from "../models/users/Customer.js";
 
 const router = new Router();
 
@@ -38,6 +38,20 @@ router.post("/login", async ({ body }, res) => {
     res.send(`Welcome, ${body.username}!`);
   } catch ({ message }) {
     res.status(400).json(message);
+  }
+});
+
+// Place an order
+router.put("/order", async ({ isAuth, body }, res) => {
+  if (isAuth?.role === "CUSTOMER") {
+    try {
+      const order = await customerController.order(body.mealsId);
+      res.status(200).json(order);
+    } catch ({ message }) {
+      res.status(500).json({ message });
+    }
+  } else {
+    res.status(401).json({ message: "Access Denied" });
   }
 });
 
