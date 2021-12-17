@@ -65,12 +65,12 @@ The password would be encrypted.
 
 ```json
 {
-	"title": "Rice with Chicken",
+  "title": "Rice with Chicken",
   "_id": 21,
   "ingredients": "Rice, Chicken Breast, Carrots, Celery",
   "description": "The most delicious one-pot meal you will ever try. Eat it any time of the day.",
   "nutrition": "Calories: 500. Carbs: 38g. Total fat: 26g. Protein: 29g.",
-   "diet": "regular"
+  "diet": "regular"
 }
 ```
 ### Order
@@ -91,6 +91,7 @@ All routes will be protected via JWT after authenticating an Admin or Customer.
 ### Admin Routes
 
 `/admin`
+
 `POST - /register`
 `POST - /login`
 
